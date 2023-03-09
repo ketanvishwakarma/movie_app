@@ -1,7 +1,3 @@
-enum TMDBMediaType { all, movie, tv, person }
-
-enum TMDBTimeWindow { day, week }
-
 class TMDBApiConfigs {
   const TMDBApiConfigs._();
 

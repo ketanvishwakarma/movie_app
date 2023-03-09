@@ -1,12 +1,12 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'tmdb_client_provider.dart';
+part of 'tmdb_client.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$tMDBClientHash() => r'224b5723345b3239d10c18e29ab1591c7feb4334';
+String _$tMDBClientHash() => r'5da059d1a2931edc59a048b0f8c334263bfffe5f';
 
 /// See also [tMDBClient].
 @ProviderFor(tMDBClient)
