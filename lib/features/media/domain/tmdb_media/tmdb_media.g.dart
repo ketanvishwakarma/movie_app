@@ -7,39 +7,41 @@ part of 'tmdb_media.dart';
 // **************************************************************************
 
 _$_TMDBMedia _$$_TMDBMediaFromJson(Map<String, dynamic> json) => _$_TMDBMedia(
-      adult: json['adult'] as bool,
-      id: json['id'] as int,
-      title: json['title'] as String,
-      originalLanguage: json['originalLanguage'] as String,
-      originalTitle: json['originalTitle'] as String,
-      overview: json['overview'] as String,
-      mediaType: json['mediaType'] as String,
-      genreIds:
-          (json['genreIds'] as List<dynamic>).map((e) => e as int).toList(),
-      popularity: (json['popularity'] as num).toDouble(),
-      releaseDate: json['releaseDate'] as String,
-      video: json['video'] as bool,
-      voteAverage: (json['voteAverage'] as num).toDouble(),
-      voteCount: json['voteCount'] as int,
-      posterPath: json['posterPath'] as String?,
-      backdropPath: json['backdropPath'] as String?,
+      id: json['id'] as int?,
+      title: json['title'] as String? ?? '',
+      overview: json['overview'] as String? ?? '',
+      genreIds: (json['genre_ids'] as List<dynamic>?)
+              ?.map((e) => e as int)
+              .toList() ??
+          const [],
+      popularity: (json['popularity'] as num?)?.toDouble() ?? 0,
+      releaseDate: json['release_date'] as String? ?? '',
+      voteAverage: (json['vote_average'] as num?)?.toDouble() ?? 0,
+      voteCount: json['vote_count'] as int? ?? 0,
+      mediaType: json['media_type'] as String? ?? '',
+      adult: json['adult'] as bool? ?? false,
+      originalLanguage: json['original_language'] as String? ?? '',
+      originalTitle: json['original_title'] as String? ?? '',
+      video: json['video'] as bool? ?? false,
+      posterPath: json['poster_path'] as String? ?? '',
+      backdropPath: json['backdrop_path'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$_TMDBMediaToJson(_$_TMDBMedia instance) =>
     <String, dynamic>{
-      'adult': instance.adult,
       'id': instance.id,
       'title': instance.title,
-      'originalLanguage': instance.originalLanguage,
-      'originalTitle': instance.originalTitle,
       'overview': instance.overview,
-      'mediaType': instance.mediaType,
-      'genreIds': instance.genreIds,
+      'genre_ids': instance.genreIds,
       'popularity': instance.popularity,
-      'releaseDate': instance.releaseDate,
+      'release_date': instance.releaseDate,
+      'vote_average': instance.voteAverage,
+      'vote_count': instance.voteCount,
+      'media_type': instance.mediaType,
+      'adult': instance.adult,
+      'original_language': instance.originalLanguage,
+      'original_title': instance.originalTitle,
       'video': instance.video,
-      'voteAverage': instance.voteAverage,
-      'voteCount': instance.voteCount,
-      'posterPath': instance.posterPath,
-      'backdropPath': instance.backdropPath,
+      'poster_path': instance.posterPath,
+      'backdrop_path': instance.backdropPath,
     };
