@@ -1,6 +1,6 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:movie_app/features/media/presentation/cover_image_widget.dart';
 import 'package:movie_app/features/media/presentation/spotlight/controller/spotlight_controller.dart';
 
 class SpotlightMediaPosterWidget extends ConsumerWidget {
@@ -8,6 +8,7 @@ class SpotlightMediaPosterWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final colorScheme = Theme.of(context).colorScheme;
     final size = MediaQuery.of(context).size;
     final spotlightController = ref.watch(spotlightControllerProvider);
     return AnimatedSwitcher(
@@ -27,9 +28,24 @@ class SpotlightMediaPosterWidget extends ConsumerWidget {
         child: spotlightController.when(
           data: (media) {
             if (media != null) {
-              return CoverImageWidget(
-                key: UniqueKey(),
-                path: media.coverImage,
+              return ShaderMask(
+                shaderCallback: (bounds) {
+                  return LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      colorScheme.background,
+                      Colors.transparent,
+                      colorScheme.background,
+                    ],
+                  ).createShader(bounds);
+                },
+                blendMode: BlendMode.dstOut,
+                child: Image(
+                  image: CachedNetworkImageProvider(media.coverImage,),
+                  alignment: Alignment.topCenter,
+                  fit: BoxFit.cover,
+                ),
               );
             } else {
               return const SizedBox.shrink();

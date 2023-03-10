@@ -17,8 +17,8 @@ class TrendingMedia with _$TrendingMedia {
     return TrendingMedia(
       title: tmdbMedia.title.isNotEmpty ? tmdbMedia.title : tmdbMedia.name,
       coverImage: tmdbMedia.backdropPath.isNotEmpty
-          ? tmdbMedia.backdropPath.toPosterUrl
-          : tmdbMedia.posterPath.toPosterUrl,
+          ? tmdbMedia.backdropPath.toMediumSizePosterUrl
+          : tmdbMedia.posterPath.toMediumSizePosterUrl,
       rating: tmdbMedia.voteAverage.toStringAsFixed(2),
       mediaType: tmdbMedia.mediaType.toUpperCase(),
       popularity: tmdbMedia.popularity.toStringAsFixed(2),

@@ -71,7 +71,7 @@ class TMDBMedia with _$TMDBMedia {
 }
 
 extension TMDBPoster on String {
-  String get toPosterUrl {
+  String get toMediumSizePosterUrl {
     if (isNotEmpty) {
       return TMDBApiConfigs.baseImageUrl + PosterSize.w780.name + this;
     } else {
