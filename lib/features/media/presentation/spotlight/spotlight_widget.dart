@@ -52,7 +52,14 @@ class SpotlightWidget extends ConsumerWidget {
                         textAlign: TextAlign.center,
                       ),
                     ),
+                    Text(
+                      '${media.mediaType} • ${media.rating} Rating',
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
                     ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        minimumSize: const Size(150, 40),
+                      ),
                       onPressed: () {},
                       child: const Text('Check out now'),
                     )

@@ -8,16 +8,18 @@ class TrendingMedia with _$TrendingMedia {
   factory TrendingMedia({
     required String title,
     required String coverImage,
+    required String rating,
+    required String mediaType,
   }) = _TrendingMedia;
 
   factory TrendingMedia.fromTMDBMedia(TMDBMedia tmdbMedia) {
     return TrendingMedia(
-      title: tmdbMedia.title.isNotEmpty
-          ? tmdbMedia.title
-          : tmdbMedia.name,
+      title: tmdbMedia.title.isNotEmpty ? tmdbMedia.title : tmdbMedia.name,
       coverImage: tmdbMedia.backdropPath.isNotEmpty
           ? tmdbMedia.backdropPath.toPosterUrl
           : tmdbMedia.posterPath.toPosterUrl,
+      rating: tmdbMedia.voteAverage.toStringAsFixed(2),
+      mediaType: tmdbMedia.mediaType.toUpperCase(),
     );
   }
 }
