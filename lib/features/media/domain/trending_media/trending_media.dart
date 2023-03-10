@@ -10,6 +10,7 @@ class TrendingMedia with _$TrendingMedia {
     required String coverImage,
     required String rating,
     required String mediaType,
+    required String popularity,
   }) = _TrendingMedia;
 
   factory TrendingMedia.fromTMDBMedia(TMDBMedia tmdbMedia) {
@@ -20,6 +21,7 @@ class TrendingMedia with _$TrendingMedia {
           : tmdbMedia.posterPath.toPosterUrl,
       rating: tmdbMedia.voteAverage.toStringAsFixed(2),
       mediaType: tmdbMedia.mediaType.toUpperCase(),
+      popularity: tmdbMedia.popularity.toStringAsFixed(2),
     );
   }
 }

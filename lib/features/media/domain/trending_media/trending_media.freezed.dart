@@ -20,6 +20,7 @@ mixin _$TrendingMedia {
   String get coverImage => throw _privateConstructorUsedError;
   String get rating => throw _privateConstructorUsedError;
   String get mediaType => throw _privateConstructorUsedError;
+  String get popularity => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TrendingMediaCopyWith<TrendingMedia> get copyWith =>
@@ -32,7 +33,12 @@ abstract class $TrendingMediaCopyWith<$Res> {
           TrendingMedia value, $Res Function(TrendingMedia) then) =
       _$TrendingMediaCopyWithImpl<$Res, TrendingMedia>;
   @useResult
-  $Res call({String title, String coverImage, String rating, String mediaType});
+  $Res call(
+      {String title,
+      String coverImage,
+      String rating,
+      String mediaType,
+      String popularity});
 }
 
 /// @nodoc
@@ -52,6 +58,7 @@ class _$TrendingMediaCopyWithImpl<$Res, $Val extends TrendingMedia>
     Object? coverImage = null,
     Object? rating = null,
     Object? mediaType = null,
+    Object? popularity = null,
   }) {
     return _then(_value.copyWith(
       title: null == title
@@ -70,6 +77,10 @@ class _$TrendingMediaCopyWithImpl<$Res, $Val extends TrendingMedia>
           ? _value.mediaType
           : mediaType // ignore: cast_nullable_to_non_nullable
               as String,
+      popularity: null == popularity
+          ? _value.popularity
+          : popularity // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -82,7 +93,12 @@ abstract class _$$_TrendingMediaCopyWith<$Res>
       __$$_TrendingMediaCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String title, String coverImage, String rating, String mediaType});
+  $Res call(
+      {String title,
+      String coverImage,
+      String rating,
+      String mediaType,
+      String popularity});
 }
 
 /// @nodoc
@@ -100,6 +116,7 @@ class __$$_TrendingMediaCopyWithImpl<$Res>
     Object? coverImage = null,
     Object? rating = null,
     Object? mediaType = null,
+    Object? popularity = null,
   }) {
     return _then(_$_TrendingMedia(
       title: null == title
@@ -118,6 +135,10 @@ class __$$_TrendingMediaCopyWithImpl<$Res>
           ? _value.mediaType
           : mediaType // ignore: cast_nullable_to_non_nullable
               as String,
+      popularity: null == popularity
+          ? _value.popularity
+          : popularity // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -129,7 +150,8 @@ class _$_TrendingMedia implements _TrendingMedia {
       {required this.title,
       required this.coverImage,
       required this.rating,
-      required this.mediaType});
+      required this.mediaType,
+      required this.popularity});
 
   @override
   final String title;
@@ -139,10 +161,12 @@ class _$_TrendingMedia implements _TrendingMedia {
   final String rating;
   @override
   final String mediaType;
+  @override
+  final String popularity;
 
   @override
   String toString() {
-    return 'TrendingMedia(title: $title, coverImage: $coverImage, rating: $rating, mediaType: $mediaType)';
+    return 'TrendingMedia(title: $title, coverImage: $coverImage, rating: $rating, mediaType: $mediaType, popularity: $popularity)';
   }
 
   @override
@@ -155,12 +179,14 @@ class _$_TrendingMedia implements _TrendingMedia {
                 other.coverImage == coverImage) &&
             (identical(other.rating, rating) || other.rating == rating) &&
             (identical(other.mediaType, mediaType) ||
-                other.mediaType == mediaType));
+                other.mediaType == mediaType) &&
+            (identical(other.popularity, popularity) ||
+                other.popularity == popularity));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, title, coverImage, rating, mediaType);
+  int get hashCode => Object.hash(
+      runtimeType, title, coverImage, rating, mediaType, popularity);
 
   @JsonKey(ignore: true)
   @override
@@ -174,7 +200,8 @@ abstract class _TrendingMedia implements TrendingMedia {
       {required final String title,
       required final String coverImage,
       required final String rating,
-      required final String mediaType}) = _$_TrendingMedia;
+      required final String mediaType,
+      required final String popularity}) = _$_TrendingMedia;
 
   @override
   String get title;
@@ -184,6 +211,8 @@ abstract class _TrendingMedia implements TrendingMedia {
   String get rating;
   @override
   String get mediaType;
+  @override
+  String get popularity;
   @override
   @JsonKey(ignore: true)
   _$$_TrendingMediaCopyWith<_$_TrendingMedia> get copyWith =>

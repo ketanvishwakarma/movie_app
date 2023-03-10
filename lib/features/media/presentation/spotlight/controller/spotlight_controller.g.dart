@@ -7,7 +7,7 @@ part of 'spotlight_controller.dart';
 // **************************************************************************
 
 String _$spotlightControllerHash() =>
-    r'bb29875cb168dac9b1201df568f4b6cbc69997ac';
+    r'ba002a26f993253d875264e9262540a2a93b33be';
 
 /// See also [SpotlightController].
 @ProviderFor(SpotlightController)

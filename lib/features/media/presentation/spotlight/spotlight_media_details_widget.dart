@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_app/features/media/presentation/spotlight/controller/spotlight_controller.dart';
@@ -40,9 +41,30 @@ class SpotlightMediaDetailsWidget extends StatelessWidget {
                           const SizedBox(
                             height: 6,
                           ),
-                          Text(
-                            '${media.mediaType} • ${media.rating} Rating',
-                            style: textTheme.titleSmall,
+                          Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              Icon(
+                                CupertinoIcons.star_fill,
+                                size: textTheme.titleSmall!.fontSize,
+                              ),
+                              Text(
+                                '  ${media.rating}',
+                                style: textTheme.titleSmall,
+                              ),
+                              Text(
+                                '  •  ${media.mediaType}  •  ',
+                                style: textTheme.titleSmall,
+                              ),
+                              Icon(
+                                CupertinoIcons.flame_fill,
+                                size: textTheme.titleSmall!.fontSize,
+                              ),
+                              Text(
+                                '  ${media.popularity}',
+                                style: textTheme.titleSmall,
+                              ),
+                            ],
                           )
                         ],
                       );

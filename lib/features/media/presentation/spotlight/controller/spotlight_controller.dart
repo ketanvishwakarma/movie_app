@@ -16,13 +16,11 @@ class SpotlightController extends _$SpotlightController {
     ref.watch(mediaServiceProvider);
     fetchSpotlightMediaList();
     ref.onDispose(dispose);
-    return const AsyncData(null);
-    // return const AsyncData();
+    return const AsyncLoading();
   }
 
   Future<void> fetchSpotlightMediaList() async {
     try {
-      state = const AsyncLoading();
       final list =
           await ref.watch(mediaServiceProvider).getSpotlightMediaList();
       if (list.isNotEmpty) {
