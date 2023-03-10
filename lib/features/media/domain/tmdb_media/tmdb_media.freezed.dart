@@ -22,6 +22,7 @@ TMDBMedia _$TMDBMediaFromJson(Map<String, dynamic> json) {
 mixin _$TMDBMedia {
   int? get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   String get overview => throw _privateConstructorUsedError;
   List<int> get genreIds => throw _privateConstructorUsedError;
   double get popularity => throw _privateConstructorUsedError;
@@ -32,6 +33,7 @@ mixin _$TMDBMedia {
   bool get adult => throw _privateConstructorUsedError;
   String get originalLanguage => throw _privateConstructorUsedError;
   String get originalTitle => throw _privateConstructorUsedError;
+  String get originalName => throw _privateConstructorUsedError;
   bool get video => throw _privateConstructorUsedError;
   String get posterPath => throw _privateConstructorUsedError;
   String get backdropPath => throw _privateConstructorUsedError;
@@ -50,6 +52,7 @@ abstract class $TMDBMediaCopyWith<$Res> {
   $Res call(
       {int? id,
       String title,
+      String name,
       String overview,
       List<int> genreIds,
       double popularity,
@@ -60,6 +63,7 @@ abstract class $TMDBMediaCopyWith<$Res> {
       bool adult,
       String originalLanguage,
       String originalTitle,
+      String originalName,
       bool video,
       String posterPath,
       String backdropPath});
@@ -80,6 +84,7 @@ class _$TMDBMediaCopyWithImpl<$Res, $Val extends TMDBMedia>
   $Res call({
     Object? id = freezed,
     Object? title = null,
+    Object? name = null,
     Object? overview = null,
     Object? genreIds = null,
     Object? popularity = null,
@@ -90,6 +95,7 @@ class _$TMDBMediaCopyWithImpl<$Res, $Val extends TMDBMedia>
     Object? adult = null,
     Object? originalLanguage = null,
     Object? originalTitle = null,
+    Object? originalName = null,
     Object? video = null,
     Object? posterPath = null,
     Object? backdropPath = null,
@@ -102,6 +108,10 @@ class _$TMDBMediaCopyWithImpl<$Res, $Val extends TMDBMedia>
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       overview: null == overview
           ? _value.overview
@@ -143,6 +153,10 @@ class _$TMDBMediaCopyWithImpl<$Res, $Val extends TMDBMedia>
           ? _value.originalTitle
           : originalTitle // ignore: cast_nullable_to_non_nullable
               as String,
+      originalName: null == originalName
+          ? _value.originalName
+          : originalName // ignore: cast_nullable_to_non_nullable
+              as String,
       video: null == video
           ? _value.video
           : video // ignore: cast_nullable_to_non_nullable
@@ -169,6 +183,7 @@ abstract class _$$_TMDBMediaCopyWith<$Res> implements $TMDBMediaCopyWith<$Res> {
   $Res call(
       {int? id,
       String title,
+      String name,
       String overview,
       List<int> genreIds,
       double popularity,
@@ -179,6 +194,7 @@ abstract class _$$_TMDBMediaCopyWith<$Res> implements $TMDBMediaCopyWith<$Res> {
       bool adult,
       String originalLanguage,
       String originalTitle,
+      String originalName,
       bool video,
       String posterPath,
       String backdropPath});
@@ -197,6 +213,7 @@ class __$$_TMDBMediaCopyWithImpl<$Res>
   $Res call({
     Object? id = freezed,
     Object? title = null,
+    Object? name = null,
     Object? overview = null,
     Object? genreIds = null,
     Object? popularity = null,
@@ -207,6 +224,7 @@ class __$$_TMDBMediaCopyWithImpl<$Res>
     Object? adult = null,
     Object? originalLanguage = null,
     Object? originalTitle = null,
+    Object? originalName = null,
     Object? video = null,
     Object? posterPath = null,
     Object? backdropPath = null,
@@ -219,6 +237,10 @@ class __$$_TMDBMediaCopyWithImpl<$Res>
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      name: null == name
+          ? _value.name
+          : name // ignore: cast_nullable_to_non_nullable
               as String,
       overview: null == overview
           ? _value.overview
@@ -260,6 +282,10 @@ class __$$_TMDBMediaCopyWithImpl<$Res>
           ? _value.originalTitle
           : originalTitle // ignore: cast_nullable_to_non_nullable
               as String,
+      originalName: null == originalName
+          ? _value.originalName
+          : originalName // ignore: cast_nullable_to_non_nullable
+              as String,
       video: null == video
           ? _value.video
           : video // ignore: cast_nullable_to_non_nullable
@@ -283,6 +309,7 @@ class _$_TMDBMedia implements _TMDBMedia {
   _$_TMDBMedia(
       {this.id,
       this.title = '',
+      this.name = '',
       this.overview = '',
       final List<int> genreIds = const [],
       this.popularity = 0,
@@ -293,6 +320,7 @@ class _$_TMDBMedia implements _TMDBMedia {
       this.adult = false,
       this.originalLanguage = '',
       this.originalTitle = '',
+      this.originalName = '',
       this.video = false,
       this.posterPath = '',
       this.backdropPath = ''})
@@ -306,6 +334,9 @@ class _$_TMDBMedia implements _TMDBMedia {
   @override
   @JsonKey()
   final String title;
+  @override
+  @JsonKey()
+  final String name;
   @override
   @JsonKey()
   final String overview;
@@ -344,6 +375,9 @@ class _$_TMDBMedia implements _TMDBMedia {
   final String originalTitle;
   @override
   @JsonKey()
+  final String originalName;
+  @override
+  @JsonKey()
   final bool video;
   @override
   @JsonKey()
@@ -354,7 +388,7 @@ class _$_TMDBMedia implements _TMDBMedia {
 
   @override
   String toString() {
-    return 'TMDBMedia(id: $id, title: $title, overview: $overview, genreIds: $genreIds, popularity: $popularity, releaseDate: $releaseDate, voteAverage: $voteAverage, voteCount: $voteCount, mediaType: $mediaType, adult: $adult, originalLanguage: $originalLanguage, originalTitle: $originalTitle, video: $video, posterPath: $posterPath, backdropPath: $backdropPath)';
+    return 'TMDBMedia(id: $id, title: $title, name: $name, overview: $overview, genreIds: $genreIds, popularity: $popularity, releaseDate: $releaseDate, voteAverage: $voteAverage, voteCount: $voteCount, mediaType: $mediaType, adult: $adult, originalLanguage: $originalLanguage, originalTitle: $originalTitle, originalName: $originalName, video: $video, posterPath: $posterPath, backdropPath: $backdropPath)';
   }
 
   @override
@@ -364,6 +398,7 @@ class _$_TMDBMedia implements _TMDBMedia {
             other is _$_TMDBMedia &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
+            (identical(other.name, name) || other.name == name) &&
             (identical(other.overview, overview) ||
                 other.overview == overview) &&
             const DeepCollectionEquality().equals(other._genreIds, _genreIds) &&
@@ -382,6 +417,8 @@ class _$_TMDBMedia implements _TMDBMedia {
                 other.originalLanguage == originalLanguage) &&
             (identical(other.originalTitle, originalTitle) ||
                 other.originalTitle == originalTitle) &&
+            (identical(other.originalName, originalName) ||
+                other.originalName == originalName) &&
             (identical(other.video, video) || other.video == video) &&
             (identical(other.posterPath, posterPath) ||
                 other.posterPath == posterPath) &&
@@ -395,6 +432,7 @@ class _$_TMDBMedia implements _TMDBMedia {
       runtimeType,
       id,
       title,
+      name,
       overview,
       const DeepCollectionEquality().hash(_genreIds),
       popularity,
@@ -405,6 +443,7 @@ class _$_TMDBMedia implements _TMDBMedia {
       adult,
       originalLanguage,
       originalTitle,
+      originalName,
       video,
       posterPath,
       backdropPath);
@@ -427,6 +466,7 @@ abstract class _TMDBMedia implements TMDBMedia {
   factory _TMDBMedia(
       {final int? id,
       final String title,
+      final String name,
       final String overview,
       final List<int> genreIds,
       final double popularity,
@@ -437,6 +477,7 @@ abstract class _TMDBMedia implements TMDBMedia {
       final bool adult,
       final String originalLanguage,
       final String originalTitle,
+      final String originalName,
       final bool video,
       final String posterPath,
       final String backdropPath}) = _$_TMDBMedia;
@@ -448,6 +489,8 @@ abstract class _TMDBMedia implements TMDBMedia {
   int? get id;
   @override
   String get title;
+  @override
+  String get name;
   @override
   String get overview;
   @override
@@ -468,6 +511,8 @@ abstract class _TMDBMedia implements TMDBMedia {
   String get originalLanguage;
   @override
   String get originalTitle;
+  @override
+  String get originalName;
   @override
   bool get video;
   @override

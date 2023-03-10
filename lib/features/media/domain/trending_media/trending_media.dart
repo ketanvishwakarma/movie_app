@@ -12,7 +12,9 @@ class TrendingMedia with _$TrendingMedia {
 
   factory TrendingMedia.fromTMDBMedia(TMDBMedia tmdbMedia) {
     return TrendingMedia(
-      title: tmdbMedia.title,
+      title: tmdbMedia.title.isNotEmpty
+          ? tmdbMedia.title
+          : tmdbMedia.name,
       coverImage: tmdbMedia.backdropPath.isNotEmpty
           ? tmdbMedia.backdropPath.toPosterUrl
           : tmdbMedia.posterPath.toPosterUrl,

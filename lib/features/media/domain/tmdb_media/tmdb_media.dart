@@ -49,6 +49,7 @@ class TMDBMedia with _$TMDBMedia {
   factory TMDBMedia({
     int? id,
     @Default('') String title,
+    @Default('') String name,
     @Default('') String overview,
     @Default([]) List<int> genreIds,
     @Default(0) double popularity,
@@ -59,6 +60,7 @@ class TMDBMedia with _$TMDBMedia {
     @Default(false) bool adult,
     @Default('') String originalLanguage,
     @Default('') String originalTitle,
+    @Default('') String originalName,
     @Default(false) bool video,
     @Default('') String posterPath,
     @Default('') String backdropPath,
