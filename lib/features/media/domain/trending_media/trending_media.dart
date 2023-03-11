@@ -8,6 +8,7 @@ class TrendingMedia with _$TrendingMedia {
   factory TrendingMedia({
     required String title,
     required String coverImage,
+    required String posterImage,
     required String rating,
     required String mediaType,
     required String popularity,
@@ -19,6 +20,7 @@ class TrendingMedia with _$TrendingMedia {
       coverImage: tmdbMedia.backdropPath.isNotEmpty
           ? tmdbMedia.backdropPath.toMediumSizePosterUrl
           : tmdbMedia.posterPath.toMediumSizePosterUrl,
+      posterImage: tmdbMedia.posterPath.toMediumSizePosterUrl,
       rating: tmdbMedia.voteAverage.toStringAsFixed(2),
       mediaType: tmdbMedia.mediaType.toUpperCase(),
       popularity: tmdbMedia.popularity.toStringAsFixed(2),

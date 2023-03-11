@@ -24,4 +24,12 @@ class MediaService {
     );
     return list.map(TrendingMedia.fromTMDBMedia).toList();
   }
+
+  Future<List<TrendingMedia>> getTodaysTrendingMoviesList() async {
+    final list = await mediaRepository.getTrendingMediaList(
+      mediaType: TMDBMediaType.movie,
+      timeWindow: TMDBTimeWindow.day,
+    );
+    return list.map(TrendingMedia.fromTMDBMedia).toList();
+  }
 }

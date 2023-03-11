@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/core/styles/app_sizes.dart';
 import 'package:movie_app/features/media/presentation/spotlight/spotlight_widget.dart';
+import 'package:movie_app/features/media/presentation/todays_trending_movies/todays_trending_movies_widget.dart';
 
 class MediaScreen extends StatelessWidget {
   const MediaScreen({super.key});
@@ -9,8 +11,15 @@ class MediaScreen extends StatelessWidget {
     // final size = MediaQuery.of(context).size;
 
     return Scaffold(
-      body: Column(
-        children: const [SpotlightWidget()],
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: const [
+            SpotlightWidget(),
+            gapHMedium,
+            TodayTrendingMovies(),
+          ],
+        ),
       ),
     );
   }

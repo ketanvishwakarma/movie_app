@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:movie_app/core/styles/app_sizes.dart';
 import 'package:movie_app/features/media/presentation/spotlight/controller/spotlight_controller.dart';
 
 class SpotlightMediaDetailsWidget extends StatelessWidget {
@@ -17,7 +18,8 @@ class SpotlightMediaDetailsWidget extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8),
+            padding:
+                const EdgeInsets.symmetric(horizontal: AppSizes.mediumSpace),
             child: Consumer(
               builder: (_, ref, __) {
                 final spotlightController =
@@ -38,9 +40,7 @@ class SpotlightMediaDetailsWidget extends StatelessWidget {
                             style: textTheme.headlineLarge,
                             textAlign: TextAlign.center,
                           ),
-                          const SizedBox(
-                            height: 6,
-                          ),
+                          gapHMedium,
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -77,9 +77,7 @@ class SpotlightMediaDetailsWidget extends StatelessWidget {
               },
             ),
           ),
-          const SizedBox(
-            height: 6,
-          ),
+          gapHMedium,
           SizedBox(
             width: 180,
             child: ElevatedButton(
