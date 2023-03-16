@@ -1,6 +1,9 @@
 # Movie Details App with Riverpod (TMDB API)
+
+<div>
 <img src=https://user-images.githubusercontent.com/42869168/225622146-ca766e7a-c1ec-4786-8aaf-491eda6b8dbf.png width=300>
 <img src=https://user-images.githubusercontent.com/42869168/225622310-c6514a89-9de4-4b9d-b11b-84454baec3f0.png width=300>
+</div>
 
 # Motivation 
  To explore learn about Riverpod, Riverpod app architecture, GoRouter and Feature-first project structure
@@ -20,3 +23,8 @@
 
 # Project state
 - Currently in progress
+
+# Inspiration
+- https://github.com/bizz84/tmdb_movie_app_riverpod
+- https://github.com/Robert-Brunhage-Organization/movie_recommendation_app_course/
+- https://github.com/roaa94/movies_app
