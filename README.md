@@ -1,16 +1,22 @@
-# movie_app
+# Movie Details App with Riverpod (TMDB API)
+<img src=https://user-images.githubusercontent.com/42869168/225622146-ca766e7a-c1ec-4786-8aaf-491eda6b8dbf.png width=300>
+<img src=https://user-images.githubusercontent.com/42869168/225622310-c6514a89-9de4-4b9d-b11b-84454baec3f0.png width=300>
 
-A new Flutter project.
+# Motivation 
+ To explore learn about Riverpod, Riverpod app architecture, GoRouter and Feature-first project structure
 
-## Getting Started
+# Packages in use
+- ```flutter_riverpod``` and ```riverpod_generator``` for state management and dependency injection
+- ```freezed``` and ```json_serializable``` for model classes
+- ```dio``` for API calls
+- ```cached_network_image``` to show the cache images that helps to show images quickly and improves user experience
+- ```flutter_cache_manager``` to pre cache network images
+- ```very_good_analysis``` to follow best coding practices 
 
-This project is a starting point for a Flutter application.
+# Current Features
+- Uses simple shimmer like effect while fetching data from the APIs
+- Spotlight: Fetches the latest trending medias and shows at the top of screen with fade animation
+- Today's Trending movies: Fetches the latest trending movies and shows below Spotlight
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Project state
+- Currently in progress
