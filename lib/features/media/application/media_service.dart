@@ -32,4 +32,12 @@ class MediaService {
     );
     return list.map(TrendingMedia.fromTMDBMedia).toList();
   }
+
+  Future<List<TrendingMedia>> getTodaysTrendingTVShowsList() async {
+    final list = await mediaRepository.getTrendingMediaList(
+      mediaType: TMDBMediaType.tv,
+      timeWindow: TMDBTimeWindow.day,
+    );
+    return list.map(TrendingMedia.fromTMDBMedia).toList();
+  }
 }
