@@ -1,20 +1,21 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/styles/app_sizes.dart';
 
 class MoviePosterWidget extends StatelessWidget {
   const MoviePosterWidget({
     super.key,
     this.path,
     this.onTap,
+    this.padding = EdgeInsets.zero,
   });
   final String? path;
   final void Function()? onTap;
+  final EdgeInsetsGeometry padding;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: AppSizes.mediumSpace),
+      padding: padding,
       child: AspectRatio(
         aspectRatio: 2 / 3,
         child: InkWell(
