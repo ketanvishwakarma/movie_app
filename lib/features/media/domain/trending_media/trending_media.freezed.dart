@@ -22,6 +22,7 @@ mixin _$TrendingMedia {
   String get rating => throw _privateConstructorUsedError;
   String get mediaType => throw _privateConstructorUsedError;
   String get popularity => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TrendingMediaCopyWith<TrendingMedia> get copyWith =>
@@ -40,7 +41,8 @@ abstract class $TrendingMediaCopyWith<$Res> {
       String posterImage,
       String rating,
       String mediaType,
-      String popularity});
+      String popularity,
+      String description});
 }
 
 /// @nodoc
@@ -62,6 +64,7 @@ class _$TrendingMediaCopyWithImpl<$Res, $Val extends TrendingMedia>
     Object? rating = null,
     Object? mediaType = null,
     Object? popularity = null,
+    Object? description = null,
   }) {
     return _then(_value.copyWith(
       title: null == title
@@ -88,6 +91,10 @@ class _$TrendingMediaCopyWithImpl<$Res, $Val extends TrendingMedia>
           ? _value.popularity
           : popularity // ignore: cast_nullable_to_non_nullable
               as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -106,7 +113,8 @@ abstract class _$$_TrendingMediaCopyWith<$Res>
       String posterImage,
       String rating,
       String mediaType,
-      String popularity});
+      String popularity,
+      String description});
 }
 
 /// @nodoc
@@ -126,6 +134,7 @@ class __$$_TrendingMediaCopyWithImpl<$Res>
     Object? rating = null,
     Object? mediaType = null,
     Object? popularity = null,
+    Object? description = null,
   }) {
     return _then(_$_TrendingMedia(
       title: null == title
@@ -152,6 +161,10 @@ class __$$_TrendingMediaCopyWithImpl<$Res>
           ? _value.popularity
           : popularity // ignore: cast_nullable_to_non_nullable
               as String,
+      description: null == description
+          ? _value.description
+          : description // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -165,7 +178,8 @@ class _$_TrendingMedia implements _TrendingMedia {
       required this.posterImage,
       required this.rating,
       required this.mediaType,
-      required this.popularity});
+      required this.popularity,
+      required this.description});
 
   @override
   final String title;
@@ -179,10 +193,12 @@ class _$_TrendingMedia implements _TrendingMedia {
   final String mediaType;
   @override
   final String popularity;
+  @override
+  final String description;
 
   @override
   String toString() {
-    return 'TrendingMedia(title: $title, coverImage: $coverImage, posterImage: $posterImage, rating: $rating, mediaType: $mediaType, popularity: $popularity)';
+    return 'TrendingMedia(title: $title, coverImage: $coverImage, posterImage: $posterImage, rating: $rating, mediaType: $mediaType, popularity: $popularity, description: $description)';
   }
 
   @override
@@ -199,12 +215,14 @@ class _$_TrendingMedia implements _TrendingMedia {
             (identical(other.mediaType, mediaType) ||
                 other.mediaType == mediaType) &&
             (identical(other.popularity, popularity) ||
-                other.popularity == popularity));
+                other.popularity == popularity) &&
+            (identical(other.description, description) ||
+                other.description == description));
   }
 
   @override
   int get hashCode => Object.hash(runtimeType, title, coverImage, posterImage,
-      rating, mediaType, popularity);
+      rating, mediaType, popularity, description);
 
   @JsonKey(ignore: true)
   @override
@@ -220,7 +238,8 @@ abstract class _TrendingMedia implements TrendingMedia {
       required final String posterImage,
       required final String rating,
       required final String mediaType,
-      required final String popularity}) = _$_TrendingMedia;
+      required final String popularity,
+      required final String description}) = _$_TrendingMedia;
 
   @override
   String get title;
@@ -234,6 +253,8 @@ abstract class _TrendingMedia implements TrendingMedia {
   String get mediaType;
   @override
   String get popularity;
+  @override
+  String get description;
   @override
   @JsonKey(ignore: true)
   _$$_TrendingMediaCopyWith<_$_TrendingMedia> get copyWith =>

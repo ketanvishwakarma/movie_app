@@ -26,21 +26,24 @@ class MoviePosterWidget extends StatelessWidget {
       padding: padding,
       child: AspectRatio(
         aspectRatio: 2 / 3,
-        child: InkWell(
-          onTap: onTap,
-          borderRadius: borderRadius,
-          child: Ink(
-            decoration: BoxDecoration(
-              borderRadius: borderRadius,
-              color: Theme.of(context).cardColor,
-              image: path != null
-                  ? DecorationImage(
-                      fit: BoxFit.cover,
-                      image: CachedNetworkImageProvider(
-                        path!,
-                      ),
-                    )
-                  : null,
+        child: Material(
+          color: Colors.transparent,
+          child: InkWell(
+            onTap: onTap,
+            borderRadius: borderRadius,
+            child: Ink(
+              decoration: BoxDecoration(
+                borderRadius: borderRadius,
+                color: Theme.of(context).cardColor,
+                image: path != null
+                    ? DecorationImage(
+                        fit: BoxFit.cover,
+                        image: CachedNetworkImageProvider(
+                          path!,
+                        ),
+                      )
+                    : null,
+              ),
             ),
           ),
         ),

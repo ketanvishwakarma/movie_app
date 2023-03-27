@@ -12,6 +12,7 @@ class TrendingMedia with _$TrendingMedia {
     required String rating,
     required String mediaType,
     required String popularity,
+    required String description,
   }) = _TrendingMedia;
 
   factory TrendingMedia.fromTMDBMedia(TMDBMedia tmdbMedia) {
@@ -24,6 +25,7 @@ class TrendingMedia with _$TrendingMedia {
       rating: tmdbMedia.voteAverage.toStringAsFixed(2),
       mediaType: tmdbMedia.mediaType.toUpperCase(),
       popularity: tmdbMedia.popularity.toStringAsFixed(2),
+      description: tmdbMedia.overview,
     );
   }
 }

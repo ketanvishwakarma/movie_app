@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_app/core/styles/app_sizes.dart';
+import 'package:movie_app/features/media/domain/trending_media/trending_media.dart';
 import 'package:movie_app/features/media/presentation/spotlight/controller/spotlight_controller.dart';
 
 class SpotlightMediaDetailsWidget extends StatelessWidget {
@@ -41,31 +42,7 @@ class SpotlightMediaDetailsWidget extends StatelessWidget {
                             textAlign: TextAlign.center,
                           ),
                           gapHMedium,
-                          Row(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              Icon(
-                                CupertinoIcons.star_fill,
-                                size: textTheme.titleSmall!.fontSize,
-                              ),
-                              Text(
-                                '  ${media.rating}',
-                                style: textTheme.titleSmall,
-                              ),
-                              Text(
-                                '  •  ${media.mediaType}  •  ',
-                                style: textTheme.titleSmall,
-                              ),
-                              Icon(
-                                CupertinoIcons.flame_fill,
-                                size: textTheme.titleSmall!.fontSize,
-                              ),
-                              Text(
-                                '  ${media.popularity}',
-                                style: textTheme.titleSmall,
-                              ),
-                            ],
-                          )
+                          MediaDetailsRow(media: media)
                         ],
                       );
                     } else {
@@ -87,6 +64,46 @@ class SpotlightMediaDetailsWidget extends StatelessWidget {
           )
         ],
       ),
+    );
+  }
+}
+
+class MediaDetailsRow extends StatelessWidget {
+  const MediaDetailsRow({
+    required this.media,
+    super.key,
+  });
+
+  final TrendingMedia media;
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Icon(
+          CupertinoIcons.star_fill,
+          size: textTheme.titleSmall!.fontSize,
+        ),
+        Text(
+          '  ${media.rating}',
+          style: textTheme.titleSmall,
+        ),
+        Text(
+          '  •  ${media.mediaType}  •  ',
+          style: textTheme.titleSmall,
+        ),
+        Icon(
+          CupertinoIcons.flame_fill,
+          size: textTheme.titleSmall!.fontSize,
+        ),
+        Text(
+          '  ${media.popularity}',
+          style: textTheme.titleSmall,
+        ),
+      ],
     );
   }
 }

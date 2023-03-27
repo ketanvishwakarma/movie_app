@@ -1,0 +1,74 @@
+import 'package:flutter/material.dart';
+import 'package:movie_app/core/styles/app_sizes.dart';
+import 'package:movie_app/core/widgets/movie_poster_widget.dart';
+import 'package:movie_app/features/media/domain/trending_media/trending_media.dart';
+import 'package:movie_app/features/media/presentation/spotlight/spotlight_media_details_widget.dart';
+import 'package:readmore/readmore.dart';
+
+class MediaMainHighLights extends StatelessWidget {
+  const MediaMainHighLights({
+    required this.media,
+    super.key,
+  });
+
+  final TrendingMedia media;
+
+  @override
+  Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+    final textTheme = Theme.of(context).textTheme;
+
+    return Column(
+      children: [
+        SizedBox(
+          height: 140,
+          child: Row(
+            children: [
+              MoviePosterWidget(
+                path: media.posterImage,
+                borderRadius: BorderRadius.circular(6),
+              ),
+              gapWLarge,
+              Flexible(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      media.title,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      style: textTheme.titleLarge,
+                    ),
+                    gapHMedium,
+                    MediaDetailsRow(media: media),
+                    const Spacer(),
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(
+                            Icons.playlist_add,
+                          ),
+                          Text(' Save '),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        gapHMedium,
+        ReadMoreText(
+          '${media.description}  ',
+          style: textTheme.bodyMedium,
+          moreStyle: textTheme.titleMedium,
+          lessStyle: textTheme.titleMedium,
+          colorClickableText: colorScheme.secondary,
+        ),
+      ],
+    );
+  }
+}

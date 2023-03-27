@@ -7,7 +7,7 @@ part of 'todays_trending_tv_shows_controller.dart';
 // **************************************************************************
 
 String _$todaysTrendingTVShowsHash() =>
-    r'42e1c605fde7c56bfcbe35b8f4b3e86d79d4110a';
+    r'd4fb8183de489a6623509b5cbbd1f94bdf8aa332';
 
 /// See also [todaysTrendingTVShows].
 @ProviderFor(todaysTrendingTVShows)

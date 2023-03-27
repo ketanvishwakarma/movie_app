@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:movie_app/core/styles/app_sizes.dart';
 import 'package:movie_app/core/widgets/movie_poster_widget.dart';
 import 'package:movie_app/features/media/domain/trending_media/trending_media.dart';
+import 'package:movie_app/features/media/presentation/media_details/media_main_highlights.dart';
 
 class MediaDetailWidget extends StatelessWidget {
   const MediaDetailWidget({
@@ -22,20 +23,20 @@ class MediaDetailWidget extends StatelessWidget {
       controller: scrollController,
       child: Column(
         children: [
-          const SizedBox(
-            height: 70,
-          ),
-          SizedBox(
-            height: 200,
+          MoviePosterWidget(
+            height: 220,
             width: size.width,
-            child: MoviePosterWidget(
-              path: media.coverImage,
-            ),
+            path: media.coverImage,
           ),
-          ColoredBox(
+          Container(
+            padding: const EdgeInsets.symmetric(
+              horizontal: AppSizes.largeSpace,
+            ),
             color: colorScheme.background,
             child: Column(
               children: [
+                gapHMedium,
+                MediaMainHighLights(media: media),
                 gapHMedium,
                 Container(
                   height: 100,
