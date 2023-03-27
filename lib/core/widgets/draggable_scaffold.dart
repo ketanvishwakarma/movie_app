@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/styles/app_sizes.dart';
 import 'package:movie_app/core/widgets/bottom_sheet_scroll_to_show_widget.dart';
@@ -23,9 +25,17 @@ class _DraggableScaffoldState extends State<DraggableScaffold> {
   @override
   void initState() {
     draggableScrollableController = DraggableScrollableController();
+    draggableScrollableController!.addListener(popWhenSheetIsTooSmall);
     super.initState();
   }
 
+  void popWhenSheetIsTooSmall() {
+    if (draggableScrollableController!.size < 0.25) {
+      draggableScrollableController!.removeListener(popWhenSheetIsTooSmall);
+      Navigator.of(context).pop();
+    }
+  }
+  
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -39,10 +49,12 @@ class _DraggableScaffoldState extends State<DraggableScaffold> {
         children: [
           // Body
           DraggableScrollableSheet(
-            initialChildSize: 0.8,
-            minChildSize: 0.8,
+            initialChildSize: 0.7,
+            // minChildSize: 0.7,
+            minChildSize: 0,
+            maxChildSize: 0.9,
             snap: true,
-            expand: false,
+            snapSizes: const [0.70, 0.9],
             controller: draggableScrollableController,
             builder: widget.builder,
           ),
@@ -50,7 +62,7 @@ class _DraggableScaffoldState extends State<DraggableScaffold> {
           Align(
             alignment: Alignment.topCenter,
             child: BottomSheetScrollToShowWidget(
-              height: 70,
+              height: 75,
               draggableScrollableController: draggableScrollableController!,
               child: ColoredBox(
                 color: colorScheme.background,
@@ -62,7 +74,8 @@ class _DraggableScaffoldState extends State<DraggableScaffold> {
                       Expanded(
                         child: Padding(
                           padding: const EdgeInsets.only(
-                              bottom: AppSizes.mediumSpace),
+                            bottom: AppSizes.mediumSpace,
+                          ),
                           child: Text(
                             widget.title!,
                             overflow: TextOverflow.ellipsis,

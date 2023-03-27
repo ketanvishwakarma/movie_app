@@ -32,7 +32,7 @@ class _BottomSheetScrollToShowWidgetState
   }
 
   void listen() {
-    if (draggableScrollableController.size <= 0.9) {
+    if (draggableScrollableController.size <= 0.8) {
       hide();
     } else {
       show();
