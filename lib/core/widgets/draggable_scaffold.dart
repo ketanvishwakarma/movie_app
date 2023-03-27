@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:movie_app/core/styles/app_sizes.dart';
 import 'package:movie_app/core/widgets/bottom_sheet_scroll_to_show_widget.dart';
@@ -35,7 +33,7 @@ class _DraggableScaffoldState extends State<DraggableScaffold> {
       Navigator.of(context).pop();
     }
   }
-  
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -50,11 +48,11 @@ class _DraggableScaffoldState extends State<DraggableScaffold> {
           // Body
           DraggableScrollableSheet(
             initialChildSize: 0.7,
-            // minChildSize: 0.7,
             minChildSize: 0,
             maxChildSize: 0.9,
             snap: true,
-            snapSizes: const [0.70, 0.9],
+            snapSizes: const [0.9],
+            snapAnimationDuration: const Duration(milliseconds: 100),
             controller: draggableScrollableController,
             builder: widget.builder,
           ),
