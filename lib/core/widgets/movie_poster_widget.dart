@@ -7,23 +7,31 @@ class MoviePosterWidget extends StatelessWidget {
     this.path,
     this.onTap,
     this.padding = EdgeInsets.zero,
+    this.width,
+    this.height,
+    this.borderRadius,
   });
   final String? path;
   final void Function()? onTap;
   final EdgeInsetsGeometry padding;
+  final double? width;
+  final double? height;
+  final BorderRadius? borderRadius;
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
+      width: width,
+      height: height,
       padding: padding,
       child: AspectRatio(
         aspectRatio: 2 / 3,
         child: InkWell(
           onTap: onTap,
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: borderRadius,
           child: Ink(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(6),
+              borderRadius: borderRadius,
               color: Theme.of(context).cardColor,
               image: path != null
                   ? DecorationImage(

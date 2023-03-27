@@ -26,6 +26,7 @@ class TodayTrendingMoviesListWidget extends ConsumerWidget {
                       (media) => MoviePosterWidget(
                         padding:
                             const EdgeInsets.only(right: AppSizes.mediumSpace),
+                        borderRadius: BorderRadius.circular(6),
                         onTap: () => onMediaTap(context, media),
                         path: media.posterImage,
                       ),
@@ -39,7 +40,10 @@ class TodayTrendingMoviesListWidget extends ConsumerWidget {
               children: List.generate(
                 3,
                 growable: false,
-                (_) => const MoviePosterWidget(),
+                (_) => MoviePosterWidget(
+                  padding: const EdgeInsets.only(right: AppSizes.mediumSpace),
+                  borderRadius: BorderRadius.circular(6),
+                ),
               ),
             ),
           ),
