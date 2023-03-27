@@ -16,6 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$TrendingMedia {
+  String get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get coverImage => throw _privateConstructorUsedError;
   String get posterImage => throw _privateConstructorUsedError;
@@ -36,7 +37,8 @@ abstract class $TrendingMediaCopyWith<$Res> {
       _$TrendingMediaCopyWithImpl<$Res, TrendingMedia>;
   @useResult
   $Res call(
-      {String title,
+      {String id,
+      String title,
       String coverImage,
       String posterImage,
       String rating,
@@ -58,6 +60,7 @@ class _$TrendingMediaCopyWithImpl<$Res, $Val extends TrendingMedia>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? title = null,
     Object? coverImage = null,
     Object? posterImage = null,
@@ -67,6 +70,10 @@ class _$TrendingMediaCopyWithImpl<$Res, $Val extends TrendingMedia>
     Object? description = null,
   }) {
     return _then(_value.copyWith(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -108,7 +115,8 @@ abstract class _$$_TrendingMediaCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {String title,
+      {String id,
+      String title,
       String coverImage,
       String posterImage,
       String rating,
@@ -128,6 +136,7 @@ class __$$_TrendingMediaCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = null,
     Object? title = null,
     Object? coverImage = null,
     Object? posterImage = null,
@@ -137,6 +146,10 @@ class __$$_TrendingMediaCopyWithImpl<$Res>
     Object? description = null,
   }) {
     return _then(_$_TrendingMedia(
+      id: null == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as String,
       title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -173,7 +186,8 @@ class __$$_TrendingMediaCopyWithImpl<$Res>
 
 class _$_TrendingMedia implements _TrendingMedia {
   _$_TrendingMedia(
-      {required this.title,
+      {required this.id,
+      required this.title,
       required this.coverImage,
       required this.posterImage,
       required this.rating,
@@ -181,6 +195,8 @@ class _$_TrendingMedia implements _TrendingMedia {
       required this.popularity,
       required this.description});
 
+  @override
+  final String id;
   @override
   final String title;
   @override
@@ -198,7 +214,7 @@ class _$_TrendingMedia implements _TrendingMedia {
 
   @override
   String toString() {
-    return 'TrendingMedia(title: $title, coverImage: $coverImage, posterImage: $posterImage, rating: $rating, mediaType: $mediaType, popularity: $popularity, description: $description)';
+    return 'TrendingMedia(id: $id, title: $title, coverImage: $coverImage, posterImage: $posterImage, rating: $rating, mediaType: $mediaType, popularity: $popularity, description: $description)';
   }
 
   @override
@@ -206,6 +222,7 @@ class _$_TrendingMedia implements _TrendingMedia {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TrendingMedia &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.coverImage, coverImage) ||
                 other.coverImage == coverImage) &&
@@ -221,8 +238,8 @@ class _$_TrendingMedia implements _TrendingMedia {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, title, coverImage, posterImage,
-      rating, mediaType, popularity, description);
+  int get hashCode => Object.hash(runtimeType, id, title, coverImage,
+      posterImage, rating, mediaType, popularity, description);
 
   @JsonKey(ignore: true)
   @override
@@ -233,7 +250,8 @@ class _$_TrendingMedia implements _TrendingMedia {
 
 abstract class _TrendingMedia implements TrendingMedia {
   factory _TrendingMedia(
-      {required final String title,
+      {required final String id,
+      required final String title,
       required final String coverImage,
       required final String posterImage,
       required final String rating,
@@ -241,6 +259,8 @@ abstract class _TrendingMedia implements TrendingMedia {
       required final String popularity,
       required final String description}) = _$_TrendingMedia;
 
+  @override
+  String get id;
   @override
   String get title;
   @override

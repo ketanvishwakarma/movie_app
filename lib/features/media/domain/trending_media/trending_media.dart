@@ -6,6 +6,7 @@ part 'trending_media.freezed.dart';
 @freezed
 class TrendingMedia with _$TrendingMedia {
   factory TrendingMedia({
+    required String id,
     required String title,
     required String coverImage,
     required String posterImage,
@@ -17,6 +18,7 @@ class TrendingMedia with _$TrendingMedia {
 
   factory TrendingMedia.fromTMDBMedia(TMDBMedia tmdbMedia) {
     return TrendingMedia(
+      id: tmdbMedia.id?.toString() ?? '',
       title: tmdbMedia.title.isNotEmpty ? tmdbMedia.title : tmdbMedia.name,
       coverImage: tmdbMedia.backdropPath.isNotEmpty
           ? tmdbMedia.backdropPath.toMediumSizePosterUrl
