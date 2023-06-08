@@ -3,6 +3,13 @@ include: package:very_good_analysis/analysis_options.yaml
 analyzer:
   plugins:
     - custom_lint
+  exclude:
+    - "**.freezed.dart"
+    - "**.g.dart"
+    - "**.gr.dart"
+    - "**/generated_plugin_registrant.dart"
+  errors:
+    invalid_annotation_target: ignore
 linter:
   rules:
     public_member_api_docs: false
