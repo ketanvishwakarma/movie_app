@@ -19,6 +19,7 @@ class AppTheme {
       appBarTheme: const AppBarTheme(
         color: AppColors.background,
       ),
+      splashFactory: InkSplash.splashFactory,
     );
   }
 }
