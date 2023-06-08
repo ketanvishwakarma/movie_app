@@ -18,7 +18,6 @@ class MediaDetailWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final colorScheme = Theme.of(context).colorScheme;
-    final textTheme = Theme.of(context).textTheme;
     return SingleChildScrollView(
       controller: scrollController,
       child: Column(
