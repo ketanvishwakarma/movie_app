@@ -12,8 +12,8 @@ class SpotlightWidget extends StatelessWidget {
     return SizedBox(
       height: size.height * 0.5,
       width: size.width,
-      child: Stack(
-        children: const [
+      child: const Stack(
+        children: [
           SpotlightMediaPosterWidget(),
           SpotlightMediaDetailsWidget()
         ],

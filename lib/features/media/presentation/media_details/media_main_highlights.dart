@@ -44,9 +44,9 @@ class MediaMainHighLights extends StatelessWidget {
                     const Spacer(),
                     ElevatedButton(
                       onPressed: () {},
-                      child: Row(
+                      child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
-                        children: const [
+                        children: [
                           Icon(
                             Icons.playlist_add,
                           ),

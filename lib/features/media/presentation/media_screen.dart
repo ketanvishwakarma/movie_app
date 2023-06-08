@@ -11,11 +11,11 @@ class MediaScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // final size = MediaQuery.of(context).size;
 
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min,
-          children: const [
+          children: [
             SpotlightWidget(),
             gapHMedium,
             TodayTrendingMovies(),
