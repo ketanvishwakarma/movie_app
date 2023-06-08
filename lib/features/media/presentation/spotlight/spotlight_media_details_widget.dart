@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_app/core/styles/app_sizes.dart';
+import 'package:movie_app/core/widgets/custom_shimmer.dart';
 import 'package:movie_app/features/media/domain/trending_media/trending_media.dart';
 import 'package:movie_app/features/media/presentation/spotlight/controller/spotlight_controller.dart';
 
@@ -13,6 +14,7 @@ class SpotlightMediaDetailsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
+    final size = MediaQuery.of(context).size;
     return Align(
       alignment: Alignment.bottomCenter,
       child: Column(
@@ -48,6 +50,21 @@ class SpotlightMediaDetailsWidget extends StatelessWidget {
                     } else {
                       return const SizedBox.shrink();
                     }
+                  },
+                  loading: () {
+                    return Column(
+                      children: [
+                        CustomShimmer(
+                          height: 40,
+                          width: size.width * 0.4,
+                        ),
+                        gapHMedium,
+                        CustomShimmer(
+                          height: 40,
+                          width: size.width * 0.8,
+                        ),
+                      ],
+                    );
                   },
                   orElse: SizedBox.shrink,
                 );

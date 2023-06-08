@@ -1,6 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:movie_app/core/widgets/custom_cached_network_image.dart';
+import 'package:movie_app/core/widgets/custom_shimmer.dart';
 import 'package:movie_app/features/media/presentation/spotlight/controller/spotlight_controller.dart';
 
 class SpotlightMediaPosterWidget extends ConsumerWidget {
@@ -28,24 +29,29 @@ class SpotlightMediaPosterWidget extends ConsumerWidget {
         child: spotlightController.when(
           data: (media) {
             if (media != null) {
-              return ShaderMask(
-                shaderCallback: (bounds) {
-                  return LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      colorScheme.background,
-                      Colors.transparent,
-                      colorScheme.background,
-                    ],
-                  ).createShader(bounds);
+              return CustomCachedNetworkImage(
+                imageUrl: media.coverImage,
+                imageBuilder: (context, imageProvider) {
+                  return ShaderMask(
+                    shaderCallback: (bounds) {
+                      return LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          colorScheme.background,
+                          Colors.transparent,
+                          colorScheme.background,
+                        ],
+                      ).createShader(bounds);
+                    },
+                    blendMode: BlendMode.dstOut,
+                    child: Image(
+                      image: imageProvider,
+                      fit: BoxFit.cover,
+                      alignment: Alignment.topCenter,
+                    ),
+                  );
                 },
-                blendMode: BlendMode.dstOut,
-                child: Image(
-                  image: CachedNetworkImageProvider(media.coverImage,),
-                  alignment: Alignment.topCenter,
-                  fit: BoxFit.cover,
-                ),
               );
             } else {
               return const SizedBox.shrink();
@@ -54,9 +60,7 @@ class SpotlightMediaPosterWidget extends ConsumerWidget {
           error: (error, stackTrace) {
             return Text(error.toString());
           },
-          loading: () => const Center(
-            child: CircularProgressIndicator.adaptive(),
-          ),
+          loading: CustomShimmer.new,
         ),
       ),
     );

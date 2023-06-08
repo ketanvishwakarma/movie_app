@@ -15,6 +15,7 @@ class MediaRepository {
     required TMDBClient tmdbClient,
   }) : _client = tmdbClient;
 
+  // ignore: unused_field
   final TMDBClient _client;
 
   FutureOr<List<TMDBMedia>> getTrendingMediaList({
