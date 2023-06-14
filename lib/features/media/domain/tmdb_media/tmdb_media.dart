@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:movie_app/features/media/data/sources/tmdb_api_configs.dart';
+import 'package:movie_app/modules/tmdb/tmdb_constants.dart';
 
 part 'tmdb_media.freezed.dart';
 part 'tmdb_media.g.dart';
@@ -73,7 +73,7 @@ class TMDBMedia with _$TMDBMedia {
 extension TMDBPoster on String {
   String get toMediumSizePosterUrl {
     if (isNotEmpty) {
-      return TMDBApiConfigs.baseImageUrl + PosterSize.w780.name + this;
+      return TmdbConstants.baseImageUrl + PosterSize.w780.name + this;
     } else {
       return 'https://static.vecteezy.com/system/resources/previews/005/337/799/original/icon-image-not-found-free-vector.jpg';
     }

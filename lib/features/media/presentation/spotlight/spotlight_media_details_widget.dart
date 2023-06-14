@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:movie_app/core/styles/app_sizes.dart';
-import 'package:movie_app/core/widgets/custom_shimmer.dart';
+import 'package:movie_app/constants/app_sizes.dart';
+import 'package:movie_app/widgets/custom_shimmer.dart';
 import 'package:movie_app/features/media/domain/trending_media/trending_media.dart';
 import 'package:movie_app/features/media/presentation/spotlight/controller/spotlight_controller.dart';
 

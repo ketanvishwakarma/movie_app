@@ -1,22 +1,23 @@
-import 'package:movie_app/features/media/data/sources/tmdb_client.dart';
+import 'package:dio/dio.dart';
 import 'package:movie_app/features/media/domain/tmdb_media/tmdb_media.dart';
 import 'package:movie_app/features/media/domain/tmdb_paginated_response/tmdb_paginated_response.dart';
+import 'package:movie_app/modules/tmdb/tmdb_dio_provider.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 part 'media_repository.g.dart';
 
 @riverpod
 MediaRepository mediaRepository(MediaRepositoryRef ref) {
-  return MediaRepository(tmdbClient: ref.read(tMDBClientProvider));
+  return MediaRepository(tmdbDio: ref.read(tmdbDioProvider));
 }
 
 class MediaRepository {
   MediaRepository({
-    required TMDBClient tmdbClient,
-  }) : _client = tmdbClient;
+    required Dio tmdbDio,
+  }) : _tmdbDio = tmdbDio;
 
   // ignore: unused_field
-  final TMDBClient _client;
+  final Dio _tmdbDio;
 
   FutureOr<List<TMDBMedia>> getTrendingMediaList({
     required TMDBMediaType mediaType,

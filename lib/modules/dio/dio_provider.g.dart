@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'tmdb_client.dart';
+part of 'dio_provider.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$tMDBClientHash() => r'5da059d1a2931edc59a048b0f8c334263bfffe5f';
+String _$dioHash() => r'58eeefbd0832498ca2574c1fe69ed783c58d1d8f';
 
-/// See also [tMDBClient].
-@ProviderFor(tMDBClient)
-final tMDBClientProvider = AutoDisposeProvider<TMDBClient>.internal(
-  tMDBClient,
-  name: r'tMDBClientProvider',
+/// See also [dio].
+@ProviderFor(dio)
+final dioProvider = AutoDisposeProvider<Dio>.internal(
+  dio,
+  name: r'dioProvider',
   debugGetCreateSourceHash:
-      const bool.fromEnvironment('dart.vm.product') ? null : _$tMDBClientHash,
+      const bool.fromEnvironment('dart.vm.product') ? null : _$dioHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef TMDBClientRef = AutoDisposeProviderRef<TMDBClient>;
+typedef DioRef = AutoDisposeProviderRef<Dio>;
 // ignore_for_file: unnecessary_raw_strings, subtype_of_sealed_class, invalid_use_of_internal_member, do_not_use_environment, prefer_const_constructors, public_member_api_docs, avoid_private_typedef_functions

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:movie_app/core/styles/app_theme.dart';
+import 'package:movie_app/styles/app_theme.dart';
 import 'package:movie_app/features/media/presentation/media_screen.dart';
 
 class MyApp extends StatelessWidget {

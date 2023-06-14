@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/styles/app_sizes.dart';
+import 'package:movie_app/constants/app_sizes.dart';
 import 'package:movie_app/features/media/presentation/todays_trending_tv_shows/todays_trending_tv_shows_list_widget.dart';
 
 class TodayTrendingTVShows extends StatelessWidget {

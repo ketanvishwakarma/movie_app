@@ -1,5 +1,5 @@
-class TMDBApiConfigs {
-  const TMDBApiConfigs._();
+class TmdbConstants {
+  const TmdbConstants._();
 
   static const tmdbKey = String.fromEnvironment('TMDB_API_KEY');
 

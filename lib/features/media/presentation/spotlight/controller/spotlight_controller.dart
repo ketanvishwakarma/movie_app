@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:movie_app/features/media/application/media_service.dart';
-import 'package:movie_app/features/media/data/repositories/cache_file_repository.dart';
 import 'package:movie_app/features/media/domain/trending_media/trending_media.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -11,7 +10,6 @@ part 'spotlight_controller.g.dart';
 class SpotlightController extends _$SpotlightController {
   Timer? timer;
   int currentIndex = 0;
-  Map<String, bool> preCachePostersMap = {};
 
   @override
   AsyncValue<TrendingMedia?> build() {
@@ -36,19 +34,10 @@ class SpotlightController extends _$SpotlightController {
     }
   }
 
-  void preCachePoster(String url) {
-    ref.watch(cacheFileRepositoryProvider).cacheFile(url);
-    preCachePostersMap[url] = true;
-  }
-
   void _startSpotlightSlides(List<TrendingMedia> list) {
     timer = Timer.periodic(const Duration(seconds: 5), (_) async {
       currentIndex = getNextIndex(list.length);
       state = AsyncData(list.elementAt(currentIndex));
-      // pre cache next poster if it's not
-      if (preCachePostersMap.length != list.length) {
-        preCachePoster(list.elementAt(getNextIndex(list.length)).coverImage);
-      }
     });
   }
 

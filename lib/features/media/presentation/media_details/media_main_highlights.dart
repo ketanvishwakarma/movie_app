@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/styles/app_sizes.dart';
-import 'package:movie_app/core/widgets/movie_poster_widget.dart';
+import 'package:movie_app/constants/app_sizes.dart';
+import 'package:movie_app/widgets/movie_poster_widget.dart';
 import 'package:movie_app/features/media/domain/trending_media/trending_media.dart';
 import 'package:movie_app/features/media/presentation/spotlight/spotlight_media_details_widget.dart';
 import 'package:readmore/readmore.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/styles/app_sizes.dart';
-import 'package:movie_app/core/widgets/bottom_sheet_scroll_to_show_widget.dart';
+import 'package:movie_app/constants/app_sizes.dart';
+import 'package:movie_app/widgets/bottom_sheet_scroll_to_show_widget.dart';
 
 class DraggableScaffold extends StatefulWidget {
   const DraggableScaffold({

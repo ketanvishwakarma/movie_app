@@ -1,7 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/core/styles/app_sizes.dart';
-import 'package:movie_app/core/widgets/custom_shimmer.dart';
+import 'package:movie_app/constants/app_sizes.dart';
+import 'package:movie_app/widgets/custom_shimmer.dart';
 
 const _fadeDuration = Duration(milliseconds: 120);
 
