@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/constants/app_sizes.dart';
 import 'package:movie_app/features/home/presentation/spotlight/spotlight_widget.dart';
-import 'package:movie_app/features/home/presentation/todays_trending_movies/weekly_trending_movies_widget.dart';
-import 'package:movie_app/features/home/presentation/todays_trending_tv_shows/todays_trending_tv_shows_widget.dart';
+import 'package:movie_app/features/home/presentation/weekly_trending_movie_list/weekly_trending_movie_list_widget.dart';
+import 'package:movie_app/features/home/presentation/weekly_trending_tv_show_list/weekly_trending_tv_show_list_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,9 +16,9 @@ class HomeScreen extends StatelessWidget {
           children: [
             SpotlightWidget(),
             gapHMedium,
-            WeeklyTrendingMoviesWidget(),
+            WeeklyTrendingMovieListWidget(),
             gapHMedium,
-            TodayTrendingTVShows(),
+            WeeklyTrendingTVShowListWidget(),
             gapHLarge,
           ],
         ),

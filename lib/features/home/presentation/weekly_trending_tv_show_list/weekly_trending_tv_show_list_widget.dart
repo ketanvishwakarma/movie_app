@@ -3,20 +3,46 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_app/constants/app_sizes.dart';
 import 'package:movie_app/features/home/domain/trending_media/trending_media.dart';
 import 'package:movie_app/features/home/presentation/media_details/media_details_widget.dart';
-import 'package:movie_app/features/home/presentation/todays_trending_tv_shows/controller/todays_trending_tv_shows_controller.dart';
+import 'package:movie_app/features/home/presentation/weekly_trending_tv_show_list/controller/weekly_trending_tv_show_list.dart';
 import 'package:movie_app/widgets/draggable_scaffold.dart';
 import 'package:movie_app/widgets/k_draggable_screen_bottom_sheet.dart';
 import 'package:movie_app/widgets/movie_poster_widget.dart';
 
-class TodayTrendingTVShowsListWidget extends ConsumerWidget {
-  const TodayTrendingTVShowsListWidget({super.key});
+class WeeklyTrendingTVShowListWidget extends StatelessWidget {
+  const WeeklyTrendingTVShowListWidget({super.key});
+
+  @override
+  Widget build(
+    BuildContext context,
+  ) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSizes.largeSpace,
+            vertical: AppSizes.mediumSpace,
+          ),
+          child: Text(
+            'Weekly Trending TV Shows',
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+        ),
+        const _ListWidget()
+      ],
+    );
+  }
+}
+
+class _ListWidget extends ConsumerWidget {
+  const _ListWidget();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return SizedBox(
       height: 180,
       width: double.maxFinite,
-      child: ref.watch(todaysTrendingTVShowsProvider).maybeWhen(
+      child: ref.watch(weeklyTrendingTVShowListProvider).maybeWhen(
             data: (list) {
               return ListView(
                 scrollDirection: Axis.horizontal,

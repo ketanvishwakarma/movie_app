@@ -28,11 +28,13 @@ class TmdbClient {
     if (dio == null) {
       _dio = Dio()..options.baseUrl = baseTmdbUrl;
       if (_enableLogger) {
-        _dio.interceptors.add(PrettyDioLogger(
-          logPrint: (object) {
-            log(object.toString());
-          },
-        ));
+        _dio.interceptors.add(
+          PrettyDioLogger(
+            logPrint: (object) {
+              log(object.toString());
+            },
+          ),
+        );
       }
       _dio.interceptors
           .add(TmdbAuthInterceptor(apiKey: tmdbConfiguration.apiKey));
