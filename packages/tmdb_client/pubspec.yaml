@@ -1,0 +1,19 @@
+name: tmdb_client
+description: A starting point for Dart libraries or applications.
+version: 1.0.0
+# repository: https://github.com/my_org/my_repo
+
+environment:
+  sdk: ^3.0.3
+
+# Add regular dependencies here.
+dependencies:
+  dio: ^5.2.1+1
+  meta: ^1.9.1
+  pretty_dio_logger: ^1.3.1
+  # path: ^1.8.0
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.21.0
+  very_good_analysis: ^5.0.0+1
