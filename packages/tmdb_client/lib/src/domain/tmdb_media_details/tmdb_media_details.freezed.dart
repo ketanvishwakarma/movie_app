@@ -31,6 +31,7 @@ mixin _$TmdbMediaDetails {
   String get status => throw _privateConstructorUsedError;
   String get tagline => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
+  @JsonKey(readValue: _readVideos)
   List<TmdbVideoDetails> get videos => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -56,7 +57,7 @@ abstract class $TmdbMediaDetailsCopyWith<$Res> {
       String status,
       String tagline,
       String title,
-      List<TmdbVideoDetails> videos});
+      @JsonKey(readValue: _readVideos) List<TmdbVideoDetails> videos});
 }
 
 /// @nodoc
@@ -152,7 +153,7 @@ abstract class _$$_TmdbMediaDetailsCopyWith<$Res>
       String status,
       String tagline,
       String title,
-      List<TmdbVideoDetails> videos});
+      @JsonKey(readValue: _readVideos) List<TmdbVideoDetails> videos});
 }
 
 /// @nodoc
@@ -235,13 +236,15 @@ class _$_TmdbMediaDetails implements _TmdbMediaDetails {
       final List<Genre> genres = const [],
       this.homepage = '',
       this.id = -1,
-      @JsonKey(name: 'release_date') this.releaseDate = '',
+      @JsonKey(name: 'release_date')
+          this.releaseDate = '',
       this.revenue = -1,
       this.runtime = -1,
       this.status = '',
       this.tagline = '',
       this.title = '',
-      final List<TmdbVideoDetails> videos = const []})
+      @JsonKey(readValue: _readVideos)
+          final List<TmdbVideoDetails> videos = const []})
       : _genres = genres,
         _videos = videos;
 
@@ -286,7 +289,7 @@ class _$_TmdbMediaDetails implements _TmdbMediaDetails {
   final String title;
   final List<TmdbVideoDetails> _videos;
   @override
-  @JsonKey()
+  @JsonKey(readValue: _readVideos)
   List<TmdbVideoDetails> get videos {
     if (_videos is EqualUnmodifiableListView) return _videos;
     // ignore: implicit_dynamic_type
@@ -354,13 +357,15 @@ abstract class _TmdbMediaDetails implements TmdbMediaDetails {
       final List<Genre> genres,
       final String homepage,
       final int id,
-      @JsonKey(name: 'release_date') final String releaseDate,
+      @JsonKey(name: 'release_date')
+          final String releaseDate,
       final int revenue,
       final int runtime,
       final String status,
       final String tagline,
       final String title,
-      final List<TmdbVideoDetails> videos}) = _$_TmdbMediaDetails;
+      @JsonKey(readValue: _readVideos)
+          final List<TmdbVideoDetails> videos}) = _$_TmdbMediaDetails;
 
   factory _TmdbMediaDetails.fromJson(Map<String, dynamic> json) =
       _$_TmdbMediaDetails.fromJson;
@@ -387,6 +392,7 @@ abstract class _TmdbMediaDetails implements TmdbMediaDetails {
   @override
   String get title;
   @override
+  @JsonKey(readValue: _readVideos)
   List<TmdbVideoDetails> get videos;
   @override
   @JsonKey(ignore: true)

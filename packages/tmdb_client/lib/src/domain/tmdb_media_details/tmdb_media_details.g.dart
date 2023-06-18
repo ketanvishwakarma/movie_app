@@ -21,7 +21,7 @@ _$_TmdbMediaDetails _$$_TmdbMediaDetailsFromJson(Map<String, dynamic> json) =>
       status: json['status'] as String? ?? '',
       tagline: json['tagline'] as String? ?? '',
       title: json['title'] as String? ?? '',
-      videos: (json['videos'] as List<dynamic>?)
+      videos: (_readVideos(json, 'videos') as List<dynamic>?)
               ?.map((e) => TmdbVideoDetails.fromJson(e as Map<String, dynamic>))
               .toList() ??
           const [],

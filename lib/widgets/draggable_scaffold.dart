@@ -60,7 +60,7 @@ class _DraggableScaffoldState extends State<DraggableScaffold> {
           Align(
             alignment: Alignment.topCenter,
             child: BottomSheetScrollToShowWidget(
-              height: 75,
+              height: size.height * 0.1,
               draggableScrollableController: draggableScrollableController!,
               child: ColoredBox(
                 color: colorScheme.background,

@@ -20,9 +20,17 @@ class TmdbMediaDetails with _$TmdbMediaDetails {
     @Default('') String status,
     @Default('') String tagline,
     @Default('') String title,
-    @Default([]) List<TmdbVideoDetails> videos,
+    @JsonKey(
+      readValue: _readVideos,
+    )
+    @Default([])
+    List<TmdbVideoDetails> videos,
   }) = _TmdbMediaDetails;
 
   factory TmdbMediaDetails.fromJson(Map<String, dynamic> json) =>
       _$TmdbMediaDetailsFromJson(json);
+}
+
+dynamic _readVideos(Map<dynamic, dynamic> map, String key) {
+  return map[key]['results'];
 }

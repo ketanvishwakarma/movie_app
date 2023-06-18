@@ -21,6 +21,7 @@ dependencies:
   pretty_dio_logger: ^1.3.1
   readmore: ^2.2.0
   riverpod_annotation: ^2.1.1
+  timeago: ^3.4.0
   tmdb_client: 
     path: packages/tmdb_client
 

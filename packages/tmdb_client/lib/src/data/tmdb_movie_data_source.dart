@@ -2,8 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:tmdb_client/src/core/endpoints.dart';
 import 'package:tmdb_client/src/domain/tmdb_media_details/tmdb_media_details.dart';
 
-class TmdbMediaDataSource {
-  TmdbMediaDataSource(this._client);
+class TmdbMovieDataSource {
+  TmdbMovieDataSource(this._client);
 
   final Dio _client;
 

@@ -6,3 +6,4 @@ const baseTmdbImageUrl = 'http://image.tmdb.org/t/p/';
 
 const trending = '/trending';
 const movie = '/movie';
+const tv = '/tv';

@@ -18,57 +18,64 @@ class MediaMainHighLights extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
-    return Column(
-      children: [
-        SizedBox(
-          height: 140,
-          child: Row(
-            children: [
-              MoviePosterWidget(
-                path: media.posterImage,
-                borderRadius: BorderRadius.circular(6),
-              ),
-              gapWLarge,
-              Flexible(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      media.title,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: textTheme.titleLarge,
-                    ),
-                    gapHMedium,
-                    MediaDetailsRow(media: media),
-                    const Spacer(),
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: const Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Icon(
-                            Icons.playlist_add,
-                          ),
-                          Text(' Save '),
-                        ],
-                      ),
-                    )
-                  ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSizes.largeSpace,
+      ),
+      child: Column(
+        children: [
+          SizedBox(
+            height: 140,
+            child: Row(
+              children: [
+                MoviePosterWidget(
+                  path: media.posterImage,
+                  borderRadius: BorderRadius.circular(6),
                 ),
-              ),
-            ],
+                gapWLarge,
+                Flexible(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        media.title,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: textTheme.titleLarge,
+                      ),
+                      gapHMedium,
+                      MediaDetailsRow(media: media),
+                      const Spacer(),
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: const Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.playlist_add,
+                            ),
+                            Text(' Save '),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
-        ),
-        gapHMedium,
-        ReadMoreText(
-          '${media.description}  ',
-          style: textTheme.bodyMedium,
-          moreStyle: textTheme.titleMedium,
-          lessStyle: textTheme.titleMedium,
-          colorClickableText: colorScheme.secondary,
-        ),
-      ],
+          gapHMedium,
+          ReadMoreText(
+            '${media.description}  ',
+            style: textTheme.bodyMedium,
+            moreStyle: textTheme.titleMedium,
+            lessStyle: textTheme.titleMedium,
+            trimMode: TrimMode.Line,
+            trimLines: 3,
+            colorClickableText: colorScheme.secondary,
+          ),
+        ],
+      ),
     );
   }
 }

@@ -11,6 +11,7 @@ class MoviePosterWidget extends StatelessWidget {
     this.width,
     this.height,
     this.borderRadius,
+    this.aspectRatio = 2 / 3,
   });
   final String? path;
   final void Function()? onTap;
@@ -18,6 +19,7 @@ class MoviePosterWidget extends StatelessWidget {
   final double? width;
   final double? height;
   final BorderRadius? borderRadius;
+  final double aspectRatio;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,7 @@ class MoviePosterWidget extends StatelessWidget {
         color: Theme.of(context).cardColor,
       ),
       child: AspectRatio(
-        aspectRatio: 2 / 3,
+        aspectRatio: aspectRatio,
         child: path == null
             ? const CustomShimmer()
             : CustomCachedNetworkImage(

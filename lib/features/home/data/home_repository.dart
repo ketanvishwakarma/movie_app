@@ -50,4 +50,18 @@ class HomeRepository {
       return [];
     }
   }
+
+  Future<TmdbMediaDetails> getMovieDetails(String id) async {
+    return _tmdbClient.movie.getById(
+      id: id,
+      includeVideoDetails: true,
+    );
+  }
+
+  Future<TmdbMediaDetails> getTVShowDetails(String id) async {
+    return _tmdbClient.tv.getById(
+      id: id,
+      includeVideoDetails: true,
+    );
+  }
 }
