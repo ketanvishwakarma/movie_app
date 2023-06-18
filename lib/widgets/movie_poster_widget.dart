@@ -34,9 +34,12 @@ class MoviePosterWidget extends StatelessWidget {
       child: AspectRatio(
         aspectRatio: aspectRatio,
         child: path == null
-            ? const CustomShimmer()
+            ? CustomShimmer(
+                borderRadius: borderRadius,
+              )
             : CustomCachedNetworkImage(
                 imageUrl: path!,
+                borderRadius: borderRadius,
                 imageBuilder: (context, imageProvider) {
                   return Material(
                     color: Colors.transparent,

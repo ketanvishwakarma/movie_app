@@ -1,66 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_app/constants/app_sizes.dart';
-import 'package:movie_app/features/home/domain/trending_media/trending_media.dart';
 import 'package:movie_app/features/home/presentation/media_details/controller/media_details.dart';
-import 'package:movie_app/features/home/presentation/media_details/media_main_highlights.dart';
 import 'package:movie_app/utils/date_time_utils.dart';
 import 'package:movie_app/widgets/custom_shimmer.dart';
 import 'package:movie_app/widgets/movie_poster_widget.dart';
 
-class MediaDetailWidget extends StatelessWidget {
-  const MediaDetailWidget({
-    required this.media,
-    required this.scrollController,
-    super.key,
-  });
-
-  final TrendingMedia media;
-  final ScrollController scrollController;
-
-  @override
-  Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
-    final colorScheme = Theme.of(context).colorScheme;
-    return SingleChildScrollView(
-      controller: scrollController,
-      child: Column(
-        children: [
-          MoviePosterWidget(
-            height: size.height * 0.25,
-            width: size.width,
-            path: media.coverImage,
-          ),
-          ColoredBox(
-            color: colorScheme.background,
-            child: ConstrainedBox(
-              constraints: BoxConstraints(
-                minHeight: size.height * 0.65,
-              ),
-              child: Column(
-                children: [
-                  gapHMedium,
-                  MediaMainHighLights(media: media),
-                  gapHLarge,
-                  _MoreVideoDetails(
-                    id: media.id,
-                    mediaType: media.mediaType,
-                  ),
-                  gapHLarge,
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class _MoreVideoDetails extends ConsumerWidget {
-  const _MoreVideoDetails({
+class MediaVideoDetails extends ConsumerWidget {
+  const MediaVideoDetails({
     required this.id,
     required this.mediaType,
+    super.key,
   });
 
   final String id;
@@ -86,7 +36,7 @@ class _MoreVideoDetails extends ConsumerWidget {
                 ),
                 child: Text(
                   'Trailers & More',
-                  style: textTheme.titleLarge,
+                  style: textTheme.titleMedium,
                 ),
               ),
               ListView.builder(

@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_app/constants/app_sizes.dart';
 import 'package:movie_app/features/home/domain/trending_media/trending_media.dart';
-import 'package:movie_app/features/home/presentation/media_details/media_details_widget.dart';
+import 'package:movie_app/features/home/presentation/media_details/media_details_screen.dart';
 import 'package:movie_app/features/home/presentation/weekly_trending_movie_list/controller/weekly_trending_movie_list.dart';
-import 'package:movie_app/widgets/draggable_scaffold.dart';
-import 'package:movie_app/widgets/k_draggable_screen_bottom_sheet.dart';
 import 'package:movie_app/widgets/movie_poster_widget.dart';
 
 class WeeklyTrendingMovieListWidget extends StatelessWidget {
@@ -77,17 +75,9 @@ class _ListWidget extends ConsumerWidget {
   }
 
   void onMediaTap(BuildContext context, TrendingMedia media) {
-    kDraggableScreenBottomSheet(
+    MediaDetailScreen.show(
       context: context,
-      child: DraggableScaffold(
-        title: media.title,
-        builder: (context, scrollController) {
-          return MediaDetailWidget(
-            media: media,
-            scrollController: scrollController,
-          );
-        },
-      ),
+      media: media,
     );
   }
 }

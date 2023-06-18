@@ -7,11 +7,13 @@ class CustomShimmer extends StatelessWidget {
     this.height,
     this.width,
     this.margin,
+    this.borderRadius,
   });
 
   final double? height;
   final double? width;
   final EdgeInsets? margin;
+  final BorderRadiusGeometry? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +22,10 @@ class CustomShimmer extends StatelessWidget {
       margin: margin,
       height: height,
       width: width,
-      color: theme.cardColor.withOpacity(0.5),
+      decoration: BoxDecoration(
+        color: theme.cardColor.withOpacity(0.5),
+        borderRadius: borderRadius,
+      ),
     )
         .animate(
           onPlay: (controller) => controller.repeat(),

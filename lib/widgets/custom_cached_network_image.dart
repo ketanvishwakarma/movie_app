@@ -10,6 +10,7 @@ class CustomCachedNetworkImage extends StatelessWidget {
     required this.imageUrl,
     this.boxFit,
     this.imageBuilder,
+    this.borderRadius,
     super.key,
   });
 
@@ -19,6 +20,7 @@ class CustomCachedNetworkImage extends StatelessWidget {
     BuildContext context,
     ImageProvider<Object> imageProvider,
   )? imageBuilder;
+  final BorderRadiusGeometry? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +32,9 @@ class CustomCachedNetworkImage extends StatelessWidget {
       fit: boxFit,
       imageBuilder: imageBuilder,
       progressIndicatorBuilder: (context, url, progress) {
-        return const CustomShimmer();
+        return CustomShimmer(
+          borderRadius: borderRadius,
+        );
       },
       errorWidget: (context, url, error) {
         return const _PlaceHolder();
