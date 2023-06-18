@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_app/constants/app_sizes.dart';
 import 'package:movie_app/features/home/presentation/media_details/controller/media_details.dart';
+import 'package:movie_app/features/home/presentation/media_details/custom_video_player_screen.dart';
 import 'package:movie_app/utils/date_time_utils.dart';
 import 'package:movie_app/widgets/custom_shimmer.dart';
 import 'package:movie_app/widgets/movie_poster_widget.dart';
@@ -48,7 +49,14 @@ class MediaVideoDetails extends ConsumerWidget {
                   return Material(
                     color: Colors.transparent,
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          CustomVideoPlayerScreen.pageRoute(
+                            tmdbVideoDetails: videoInfo,
+                          ),
+                        );
+                      },
                       child: Ink(
                         child: Padding(
                           padding: const EdgeInsets.symmetric(
