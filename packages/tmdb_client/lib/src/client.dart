@@ -5,7 +5,7 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:tmdb_client/src/core/configuration.dart';
 import 'package:tmdb_client/src/core/endpoints.dart';
 import 'package:tmdb_client/src/core/tmdb_auth_interceptor.dart';
-import 'package:tmdb_client/src/data/tmdb_trending.dart';
+import 'package:tmdb_client/src/data/tmdb_trending_data_source.dart';
 
 /// The class that represents a client connection to the **TMDB** API.
 ///
@@ -47,5 +47,5 @@ class TmdbClient {
   /// Value indicating whether the logger should be enabled.
   final bool _enableLogger;
 
-  TmdbTrending get trending => TmdbTrending(_dio);
+  TmdbTrendingDataSource get trending => TmdbTrendingDataSource(_dio);
 }

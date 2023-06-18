@@ -6,9 +6,13 @@ part 'genre.g.dart';
 @freezed
 class Genre with _$Genre {
   factory Genre({
-    int? id,
-    String? name,
+    @Default(-1) int id,
+    @Default('') String name,
   }) = _Genre;
 
   factory Genre.fromJson(Map<String, dynamic> json) => _$GenreFromJson(json);
+}
+
+extension GenreX on Genre {
+  bool get isValid => id != -1 && name.isNotEmpty;
 }

@@ -4,8 +4,8 @@ import 'package:tmdb_client/src/core/enums.dart';
 import 'package:tmdb_client/src/domain/tmdb_media/tmdb_media.dart';
 import 'package:tmdb_client/src/domain/tmdb_paginated_response/tmdb_paginated_response.dart';
 
-class TmdbTrending {
-  TmdbTrending(this._client);
+class TmdbTrendingDataSource {
+  TmdbTrendingDataSource(this._client);
 
   final Dio _client;
 

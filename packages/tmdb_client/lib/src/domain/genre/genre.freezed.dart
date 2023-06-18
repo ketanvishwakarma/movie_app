@@ -20,8 +20,8 @@ Genre _$GenreFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Genre {
-  int? get id => throw _privateConstructorUsedError;
-  String? get name => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +33,7 @@ abstract class $GenreCopyWith<$Res> {
   factory $GenreCopyWith(Genre value, $Res Function(Genre) then) =
       _$GenreCopyWithImpl<$Res, Genre>;
   @useResult
-  $Res call({int? id, String? name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -49,18 +49,18 @@ class _$GenreCopyWithImpl<$Res, $Val extends Genre>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
+              as int,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -71,7 +71,7 @@ abstract class _$$_GenreCopyWith<$Res> implements $GenreCopyWith<$Res> {
       __$$_GenreCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int? id, String? name});
+  $Res call({int id, String name});
 }
 
 /// @nodoc
@@ -83,18 +83,18 @@ class __$$_GenreCopyWithImpl<$Res> extends _$GenreCopyWithImpl<$Res, _$_Genre>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
+    Object? id = null,
+    Object? name = null,
   }) {
     return _then(_$_Genre(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
+              as int,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -102,15 +102,17 @@ class __$$_GenreCopyWithImpl<$Res> extends _$GenreCopyWithImpl<$Res, _$_Genre>
 /// @nodoc
 @JsonSerializable()
 class _$_Genre implements _Genre {
-  _$_Genre({this.id, this.name});
+  _$_Genre({this.id = -1, this.name = ''});
 
   factory _$_Genre.fromJson(Map<String, dynamic> json) =>
       _$$_GenreFromJson(json);
 
   @override
-  final int? id;
+  @JsonKey()
+  final int id;
   @override
-  final String? name;
+  @JsonKey()
+  final String name;
 
   @override
   String toString() {
@@ -145,14 +147,14 @@ class _$_Genre implements _Genre {
 }
 
 abstract class _Genre implements Genre {
-  factory _Genre({final int? id, final String? name}) = _$_Genre;
+  factory _Genre({final int id, final String name}) = _$_Genre;
 
   factory _Genre.fromJson(Map<String, dynamic> json) = _$_Genre.fromJson;
 
   @override
-  int? get id;
+  int get id;
   @override
-  String? get name;
+  String get name;
   @override
   @JsonKey(ignore: true)
   _$$_GenreCopyWith<_$_Genre> get copyWith =>
