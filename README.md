@@ -28,7 +28,3 @@
 - https://github.com/bizz84/tmdb_movie_app_riverpod
 - https://github.com/Robert-Brunhage-Organization/movie_recommendation_app_course/
 - https://github.com/roaa94/movies_app
-
-# Tasks
-- Update existing feature with better principles [1H]
-- Add more movie details [1H-30M]
